@@ -1,5 +1,5 @@
 import {TextInputProps, TextInput, View} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles';
 import DText from '../DText';
 type Props = TextInputProps & {
