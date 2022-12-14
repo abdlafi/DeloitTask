@@ -1,17 +1,22 @@
 import {TextInputProps, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 import styles from './styles';
-type Props = TextInputProps & {};
+import DText from '../DText';
+type Props = TextInputProps & {
+  leftIcon?: React.ReactElement;
+  rightIcon?: React.ReactElement;
+};
 const DTextInput = (props: Props) => {
-  const [onFocus, setOnFocus] = useState(false);
   return (
-    <View style={[styles.container, onFocus ? styles.focusedBorder : null]}>
-      <TextInput
-        {...props}
-        style={[props.style, styles.textInput]}
-        onFocus={() => setOnFocus(true)}
-        onBlur={() => setOnFocus(false)}
-      />
+    <View>
+      <DText> Title </DText>
+      <View style={[styles.container]}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          {props.leftIcon ? props.leftIcon : null}
+          <TextInput {...props} style={[props.style, styles.textInput]} />
+          {props.rightIcon ? props.rightIcon : null}
+        </View>
+      </View>
     </View>
   );
 };
