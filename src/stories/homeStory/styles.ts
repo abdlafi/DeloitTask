@@ -3,7 +3,6 @@ import {Platform, StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#06C1C4',
     alignContent: 'center',
     justifyContent: 'center',
   },
@@ -12,6 +11,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 50,
+    marginVertical: 20,
   },
   footer: {
     flex: 3,
@@ -22,9 +22,11 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   text_header: {
-    color: '#fff',
+    color: colors.black,
     fontWeight: 'bold',
     fontSize: 30,
+    mar
+    backgroundColor: '#DBDBDB',
   },
   text_footer: {
     color: '#05375a',
@@ -85,4 +87,17 @@ export default StyleSheet.create({
     marginTop: 15,
   },
   forgetPassword: {color: colors.primaryBlue, marginTop: 15},
+  taskItem: {
+    padding: 5,
+    paddingLeft: 10,
+    marginVertical: 10,
+    marginHorizontal: 20,
+    fontSize: 16,
+  },
+  sectionTaskItem: {
+    padding: 10,
+    marginVertical: 20,
+    fontSize: 16,
+    textAlign: 'center',
+  },
 });
