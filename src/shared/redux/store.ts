@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import whitelist from './whitelist';
 import logger from 'redux-logger';
 import reducers from './reducers';
+import {useDispatch} from 'react-redux';
 
 const persistConfig = {
   key: 'root',
@@ -21,10 +22,11 @@ const store = configureStore({
     }).concat(logger);
     return middleware;
   },
-  devTools: process.env.NODE_ENV !== 'production',
+  devTools: true, //process.env.NODE_ENV !== 'production',
 });
 const persistor = persistStore(store);
 export {store, persistor as persistor};
 export type RootState = ReturnType<typeof store.getState>;
 export type ThunkAppDispatch = ThunkDispatch<RootState, void, Action>;
 export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<ThunkAppDispatch>();

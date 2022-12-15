@@ -1,1 +1,1 @@
-export default ['userData'];
+export default ['users'];

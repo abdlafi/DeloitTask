@@ -4,9 +4,9 @@ import type {RootState} from '../store';
 // Define a type for the slice state
 interface State {
   loading: boolean;
-  data: usersState[];
+  data: userDataState;
 }
-interface usersState {
+interface userDataState {
   id: string;
   email: string;
   phoneNumber: string;
@@ -18,44 +18,42 @@ interface usersState {
 // Define the initial state using that type
 const initialState: State = {
   loading: false,
-  data: [
-    {
-      id: '',
-      email: '',
-      phoneNumber: '',
-      dateOfBirth: '',
-      password: '',
-      needToSetPassword: true,
-    },
-  ],
+  data: {
+    id: '',
+    email: '',
+    phoneNumber: '',
+    dateOfBirth: '',
+    password: '',
+    needToSetPassword: true,
+  },
 };
 
-export const fillusers = createAsyncThunk(
-  'usersSettings/fillusers',
-  async (form: usersState) => {
+export const filluserData = createAsyncThunk(
+  'userDataSettings/filluserData',
+  async (form: userDataState) => {
     var d = {data: form};
     return await d;
   },
 );
-export const usersSlice = createSlice({
-  name: 'users',
+export const userDataSlice = createSlice({
+  name: 'userData',
   initialState,
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(fillusers.pending, state => {
+    builder.addCase(filluserData.pending, state => {
       state.loading = true;
     });
-    builder.addCase(fillusers.fulfilled, (state, action) => {
-      state.data = [...state.data, action.payload.data];
+    builder.addCase(filluserData.fulfilled, (state, action) => {
+      state.data = action.payload.data;
       state.loading = false;
     });
-    builder.addCase(fillusers.rejected, state => {
+    builder.addCase(filluserData.rejected, state => {
       state.loading = false;
     });
   },
 });
 
 // Other code such as selectors can use the imported `RootState` type
-export const usersStore = (state: RootState) => state.users;
+export const userDataStore = (state: RootState) => state.userData;
 
-export default usersSlice.reducer;
+export default userDataSlice.reducer;

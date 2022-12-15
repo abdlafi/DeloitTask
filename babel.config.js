@@ -21,6 +21,7 @@ module.exports = {
           '@shared': './src/shared',
           '@stories': './src/stories',
           '@assets': './src/assets',
+          '@routes': './src/routes',
         },
       },
     ],

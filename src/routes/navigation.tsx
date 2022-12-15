@@ -9,6 +9,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import SplashScreen from '../stories/splashStory';
 import {LoginStackScreens} from './stacks/login';
+import {RegistrationStackScreens} from './stacks/registration';
+import {HomeStackScreens} from './stacks/home';
 
 const nativeStack = createNativeStackNavigator();
 const stack = createStackNavigator();
@@ -71,6 +73,15 @@ const NavigationManager = () => {
           name="LoginStackScreens"
           component={LoginStackScreens}
         />
+        <nativeStack.Screen
+          name="RegistrationStackScreens"
+          component={RegistrationStackScreens}
+        />
+        <nativeStack.Screen
+          name="HomeStackScreens"
+          component={HomeStackScreens}
+        />
+        {/* HomeStory */}
       </stack.Navigator>
     </NavigationContainer>
   );
