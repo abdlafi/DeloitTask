@@ -13,14 +13,25 @@ import {Provider} from 'react-redux';
 import NavigationManager from './navigation';
 import i18n from '../../src/shared/translations';
 import RNRestart from 'react-native-restart';
+import colors from '@shared/utils/colors';
+
 const statusBar = {
-  ios: <StatusBar animated={true} translucent={true} hidden={false} />,
+  ios: (
+    <StatusBar
+      animated={true}
+      translucent={true}
+      hidden={false}
+      backgroundColor={colors.primaryBlue}
+      barStyle="light-content"
+    />
+  ),
   android: (
     <StatusBar
       animated={false}
       translucent={true}
       backgroundColor={'transparent'}
       hidden={false}
+      barStyle="light-content"
     />
   ),
 };

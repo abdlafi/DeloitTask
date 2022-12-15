@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  Alert,
-  StatusBar,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
@@ -41,10 +34,6 @@ const LoginStory = () => {
   const [eyeOn, setEyeOn] = useState(false);
   return (
     <View style={styles.container}>
-      <StatusBar
-        backgroundColor={colors.primaryBlue}
-        barStyle="light-content"
-      />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
       </View>

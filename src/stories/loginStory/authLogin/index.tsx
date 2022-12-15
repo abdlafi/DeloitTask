@@ -25,10 +25,11 @@ const AuthLogin = () => {
   */
   const users = useSelector(usersStore);
   const dispatch = useAppDispatch();
-  const _onSubmit = (values, formikHelpers) => {
-    console.log('====================================');
-    console.log(values, formikHelpers);
-    console.log('====================================');
+  const _onSubmit = (values: {
+    email: string;
+    dateOfBirth: string;
+    phoneNumber: string;
+  }) => {
     if (
       users.data.filter(i =>
         i.email.toLowerCase().includes(String(values.email).toLowerCase()),
