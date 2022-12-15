@@ -25,7 +25,6 @@ export default StyleSheet.create({
     color: colors.black,
     fontWeight: 'bold',
     fontSize: 30,
-    mar
     backgroundColor: '#DBDBDB',
   },
   text_footer: {
