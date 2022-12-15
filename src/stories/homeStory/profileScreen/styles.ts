@@ -1,17 +1,19 @@
+import {ScreenWidth} from '@shared/utils';
 import colors from '@shared/utils/colors';
 import {Platform, StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
+    // alignContent: 'center',
+    // justifyContent: 'center',
+    backgroundColor: colors.white,
+    paddingHorizontal: 20,
   },
   header: {
     flex: 1,
     justifyContent: 'flex-end',
     paddingHorizontal: 20,
     paddingBottom: 50,
-    marginVertical: 20,
   },
   footer: {
     flex: 3,
@@ -22,10 +24,9 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   text_header: {
-    color: colors.black,
+    color: '#fff',
     fontWeight: 'bold',
     fontSize: 30,
-    backgroundColor: '#DBDBDB',
   },
   text_footer: {
     color: '#05375a',
@@ -46,24 +47,25 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginTop: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#FF0000',
+    borderBottomColor: colors.errorRed,
     paddingBottom: 5,
   },
   textInput: {
     flex: 1,
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
-    color: '#05375a',
+    color: colors.black,
   },
+  DOBContrainer: {flexDirection: 'row'},
   errorMsg: {
-    color: '#FF0000',
+    color: colors.errorRed,
     fontSize: 14,
   },
   button: {
     alignItems: 'center',
     marginTop: 50,
   },
-  signIn: {
+  Submit: {
     width: '100%',
     height: 50,
     justifyContent: 'center',
@@ -86,17 +88,10 @@ export default StyleSheet.create({
     marginTop: 15,
   },
   forgetPassword: {color: colors.primaryBlue, marginTop: 15},
-  taskItem: {
-    padding: 5,
-    paddingLeft: 10,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    fontSize: 16,
-  },
-  sectionTaskItem: {
-    padding: 10,
-    marginVertical: 20,
-    fontSize: 16,
-    textAlign: 'center',
+  imageContainer: {
+    width: ScreenWidth,
+    alignSelf: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
 });

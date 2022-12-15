@@ -7,4 +7,5 @@ export default {
   white: '#FFFFFF',
   disabledGray: '#B2B2B2',
   errorRed: '#FF0000',
+  searchBorderColor: '#D8D8D8',
 };

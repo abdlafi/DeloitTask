@@ -16,8 +16,11 @@ import {usersStore} from '@shared/redux/reducers/user';
 import {useSelector} from 'react-redux';
 import {validationSchema} from '../validation';
 import {setSecurePassword} from '@shared/utils/storageHandler';
+import {t} from 'i18next';
+import {changeLanguage} from '@shared/utils';
 const LoginStory = () => {
   const users = useSelector(usersStore);
+  const [eyeOn, setEyeOn] = useState(false);
   const _onSubmit = (values: {email: string; password: string}) => {
     let user = users.data.filter(
       i =>
@@ -31,11 +34,11 @@ const LoginStory = () => {
       Alert.alert('wrong username or password');
     }
   };
-  const [eyeOn, setEyeOn] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.text_header}>Welcome!</Text>
+        <Text style={styles.text_header}>{t('login.ReadyToEnjoy')}</Text>
       </View>
       <Animatable.View
         entering={BounceInDown}
@@ -63,13 +66,13 @@ const LoginStory = () => {
           }) => (
             <>
               <Text style={[styles.text_footer, styles.passwordTextFooter]}>
-                Email
+                {t('login.Email')}
               </Text>
               <View style={styles.action}>
                 <FontAwesome name="envelope-o" color={colors.black} size={20} />
                 <TextInput
                   value={values.email}
-                  placeholder="Email"
+                  placeholder={t('login.Email') ?? ''}
                   placeholderTextColor="#666666"
                   style={[styles.textInput]}
                   autoCapitalize="none"
@@ -90,14 +93,14 @@ const LoginStory = () => {
               )}
 
               <Text style={[styles.text_footer, styles.passwordTextFooter]}>
-                Passowrd
+                {t('login.Passowrd')}
               </Text>
               <View style={styles.action}>
                 <FontAwesome name="lock" color={colors.black} size={20} />
                 <TextInput
                   value={values.password}
                   secureTextEntry={!eyeOn}
-                  placeholder="Passowrd"
+                  placeholder={t('login.Passowrd') ?? ''}
                   placeholderTextColor="#666666"
                   style={[styles.textInput]}
                   autoCapitalize="none"
@@ -118,6 +121,12 @@ const LoginStory = () => {
                   <Text style={styles.errorMsg}>{errors.password}</Text>
                 </Animatable.View>
               )}
+              <View />
+              <TouchableOpacity
+                onPress={changeLanguage}
+                style={styles.languageContainer}>
+                <Text>{t('language') ?? ''}</Text>
+              </TouchableOpacity>
               <View style={styles.button}>
                 <TouchableOpacity
                   disabled={!isValid}
@@ -130,7 +139,7 @@ const LoginStory = () => {
                         : [colors.disabledGray, colors.disabledGray]
                     }
                     style={styles.Submit}>
-                    <Text style={[styles.textSign]}>Login</Text>
+                    <Text style={[styles.textSign]}>{t('login.Login')}</Text>
                   </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -143,7 +152,7 @@ const LoginStory = () => {
                         color: colors.primaryBlue,
                       },
                     ]}>
-                    Sign Up
+                    {t('login.SignUp')}
                   </Text>
                 </TouchableOpacity>
               </View>

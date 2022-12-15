@@ -43,6 +43,7 @@ export default StyleSheet.create({
     borderBottomColor: colors.white,
     paddingBottom: 5,
   },
+  languageContainer: {marginTop: 20},
   actionError: {
     flexDirection: 'row',
     marginTop: 10,

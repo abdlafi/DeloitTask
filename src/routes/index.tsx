@@ -22,7 +22,7 @@ const statusBar = {
       translucent={true}
       hidden={false}
       backgroundColor={colors.primaryBlue}
-      barStyle="light-content"
+      // barStyle="light-content"
     />
   ),
   android: (
@@ -31,7 +31,7 @@ const statusBar = {
       translucent={true}
       backgroundColor={'transparent'}
       hidden={false}
-      barStyle="light-content"
+      // barStyle="light-content"
     />
   ),
 };

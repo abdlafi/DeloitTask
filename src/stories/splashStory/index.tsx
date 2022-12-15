@@ -11,7 +11,6 @@ import {getSecurePassword} from '@shared/utils/storageHandler';
 import {filluserData} from '@shared/redux/reducers/userData';
 import {useSelector} from 'react-redux';
 import {usersStore} from '@shared/redux/reducers/user';
-import {Alert} from 'react-native';
 import {logOut} from '@shared/utils/userManagment';
 
 const SplashScreen = () => {
@@ -33,7 +32,6 @@ const SplashScreen = () => {
       dispatch(filluserData({...userData[0]}));
       navigate('HomeStackScreens', 'HomeStory');
     } else {
-      Alert.alert('you need to login');
       logOut();
     }
   };

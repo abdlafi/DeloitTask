@@ -1,3 +1,10 @@
 {
-  "language": "arabic"
+  "language": "العربية",
+  "login": {
+    "ReadyToEnjoy": "مستعد للمتعة!",
+    "Email": "الايميل",
+    "Passowrd": "كلمة المرور",
+    "Login": "تسجيل الدخول",
+    "SignUp": "تسجيل"
+  }
 }

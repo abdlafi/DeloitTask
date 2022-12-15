@@ -1,7 +1,7 @@
 import {navigate} from '@routes/navigation';
-import {setSecurePassword} from './storageHandler';
+import {resetSecurePassword} from './storageHandler';
 
 export const logOut = async () => {
-  await setSecurePassword('', '');
+  await resetSecurePassword();
   navigate('LoginStackScreens', 'LoginStory');
 };

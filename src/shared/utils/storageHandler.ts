@@ -14,3 +14,7 @@ export const setSecurePassword = async (email: string, password: string) => {
 export const getSecurePassword = async () => {
   return await Keychain.getGenericPassword();
 };
+
+export const resetSecurePassword = async () => {
+  return await Keychain.resetGenericPassword();
+};

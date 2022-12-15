@@ -1,3 +1,10 @@
 {
-  "language": "english"
+  "language": "English",
+  "login": {
+    "ReadyToEnjoy": "Ready to Enjoy! ",
+    "Email": "Email",
+    "Passowrd": "Passowrd",
+    "Login": "Login",
+    "SignUp": "Sign Up"
+  }
 }
